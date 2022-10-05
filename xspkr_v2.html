@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <title>xspkr</title>
+  <title>Conversion de voix: faisabilité</title>
   <style>
     html {
       line-height: 1.5;
@@ -14,7 +14,7 @@
       background-color: #fdfdfd;
     }
     body {
-      margin: 0 0 0 0;
+      margin: 0;
       max-width: 72em;
       padding-left: 50px;
       padding-right: 50px;
@@ -150,108 +150,120 @@
   <![endif]-->
 </head>
 <body>
+<header id="title-block-header">
+<h1 class="title">Conversion de voix: faisabilité</h1>
+</header>
 <div id="tab:xspk_demo">
 <table>
-<caption>Exemples tirés de LibriTTS dev-clean, pour 256 mels. Qualité:
-somme de Naturel et MOS. Meilleur en tout: exemple ayant la plus grande
-somme de Naturel, MOS, multipliée par la Similarité relative.</caption>
+<caption>Exemples de conversion de voix, pour l’anglais, obtenus lors de
+la preuve de faisabilité. Source: audio original (contenu). Cible: audio
+original (voix cible). Résultat: audio produit par conversion de
+voix proposée.</caption>
 <thead>
 <tr class="header">
-<th style="text-align: left;"><strong>Voix</strong></th>
-<th style="text-align: left;"><strong>Exemple</strong></th>
-<th style="text-align: center;"><strong>Source</strong></th>
-<th style="text-align: center;"><strong>Cible</strong></th>
+<th style="text-align: left;"><strong>Voix source</strong></th>
+<th style="text-align: left;"><strong>Voix cible</strong></th>
+<th style="text-align: center;"><strong>Audio source</strong></th>
+<th style="text-align: center;"><strong>Audio cible</strong></th>
 <th style="text-align: center;"><strong>Résultat</strong></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;"></td>
-<td style="text-align: left;">Pire qualité</td>
+    <td style="text-align: left;">8297</td>
+<td style="text-align: left;">6241</td>
 <td style="text-align: center;">
 <audio controls="" preload="none"><source
-    src="https://github.com/bouliagi/vc_examples/blob/gh-pages/CrossSpeaker/mm_wq_src_652_130737_000012_000000.wav?raw=true">
-</audio>
-</td>
+    src="https://github.com/bouliagi/vc_examples/blob/gh-pages/CrossSpeaker/mm_avgmos_src_8297_275154_000006_000002.wav?raw=true">
+</audio></td>
 <td style="text-align: center;">
 <audio controls="" preload="none"><source
-    src="https://github.com/bouliagi/vc_examples/blob/gh-pages/CrossSpeaker/mm_wq_tgt_6241_61943_000037_000000.wav?raw=true">
-</audio>
-</td>
+    src="https://github.com/bouliagi/vc_examples/blob/gh-pages/CrossSpeaker/mm_avgmos_tgt_6241_61943_000037_000000.wav?raw=true">
+</audio></td>
 <td style="text-align: center;">
 <audio controls="" preload="none"><source
-    src="https://github.com/bouliagi/vc_examples/blob/gh-pages/CrossSpeaker/mm_wq_652_130737_000012_000000-6241_61943_000037_000000.wav?raw=true">
+    src="https://github.com/bouliagi/vc_examples/blob/gh-pages/CrossSpeaker/mm_avgmos_8297_275154_000006_000002-6241_61943_000037_000000.wav?raw=true">
 </audio></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"></td>
-<td style="text-align: left;">MOS typique</td>
-<td style="text-align: center;"><a
-href="https://drive.google.com/file/d/16S8YGphqMnTa0pwuYfGUoYtMS3s0S0YY/view?usp=sharing"></a></td>
-<td style="text-align: center;"><a
-href="https://drive.google.com/file/d/1GJrIYrcAdtRVcsBNtgiJgEWdgmfiQOJJ/view?usp=sharing"></a></td>
-<td style="text-align: center;"><a
-href="https://drive.google.com/file/d/1BjrJ-sgm4csD36RsYI_LzkgnNOt2AAAz/view?usp=sharing"></a></td>
+<td style="text-align: left;">422</td>
+<td style="text-align: left;">6295</td>
+<td style="text-align: center;">
+<audio controls="" preload="none"><source
+    src="https://github.com/bouliagi/vc_examples/blob/gh-pages/CrossSpeaker/mm_bq_src_422_122949_000013_000010.wav?raw=true">
+</audio></td>
+<td style="text-align: center;">
+<audio controls="" preload="none"><source
+    src="https://github.com/bouliagi/vc_examples/blob/gh-pages/CrossSpeaker/mm_bq_tgt_6295_64301_000014_000003.wav?raw=true">
+</audio></td>
+<td style="text-align: center;">
+<audio controls="" preload="none"><source
+    src="https://github.com/bouliagi/vc_examples/blob/gh-pages/CrossSpeaker/mm_bq_422_122949_000013_000010-6295_64301_000014_000003.wav?raw=true">
+</audio></td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"></td>
-<td style="text-align: left;">Meilleure qualité</td>
-<td style="text-align: center;"><a
-href="https://drive.google.com/file/d/1PoLr2VC8z_J8vAv2seUSxCTWE0gepk9i/view?usp=sharing"></a></td>
-<td style="text-align: center;"><a
-href="https://drive.google.com/file/d/1T9DV9NYw2iS2jp8ACqisN7GlhLB2J5wH/view?usp=sharing"></a></td>
-<td style="text-align: center;"><a
-href="https://drive.google.com/file/d/1D0RvtbtGyYAublZfOVwvmy1oWEtF2F0g/view?usp=sharing"></a></td>
+<td style="text-align: left;">6295</td>
+<td style="text-align: left;">3000</td>
+<td style="text-align: center;">
+<audio controls="" preload="none"><source
+    src="https://github.com/bouliagi/vc_examples/blob/gh-pages/CrossSpeaker/mm_bo_src_6295_64301_000014_000003.wav?raw=true">
+</audio></td>
+<td style="text-align: center;">
+<audio controls="" preload="none"><source
+    src="https://github.com/bouliagi/vc_examples/blob/gh-pages/CrossSpeaker/mm_bo_tgt_3000_15664_000005_000004.wav?raw=true">
+</audio></td>
+<td style="text-align: center;">
+<audio controls="" preload="none"><source
+    src="https://github.com/bouliagi/vc_examples/blob/gh-pages/CrossSpeaker/mm_bo_6295_64301_000014_000003-3000_15664_000005_000004.wav?raw=true">
+</audio></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Homme</td>
-<td style="text-align: left;">Meilleur en tout</td>
-<td style="text-align: center;"><a
-href="https://drive.google.com/file/d/1--PI1BeCTKmL1GSiKYFfmcjfgDFJrjRC/view?usp=sharing"></a></td>
-<td style="text-align: center;"><a
-href="https://drive.google.com/file/d/13enOThShYmkPl9W3iGm7OfELCjbEjIco/view?usp=sharing"></a></td>
-<td style="text-align: center;"><a
-href="https://drive.google.com/file/d/1iWJ9yziOr0Vjtv3IGQYxiffusRjROtMp/view?usp=sharing"></a></td>
+<td style="text-align: left;">3576</td>
+<td style="text-align: left;">6319</td>
+<td style="text-align: center;">
+<audio controls="" preload="none"><source
+    src="https://github.com/bouliagi/vc_examples/blob/gh-pages/CrossSpeaker/ff_avgmos_src_3576_138058_000019_000003.wav?raw=true">
+</audio></td>
+<td style="text-align: center;">
+<audio controls="" preload="none"><source
+    src="https://github.com/bouliagi/vc_examples/blob/gh-pages/CrossSpeaker/ff_avgmos_tgt_6319_64726_000004_000002.wav?raw=true">
+</audio></td>
+<td style="text-align: center;">
+<audio controls="" preload="none"><source
+    src="https://github.com/bouliagi/vc_examples/blob/gh-pages/CrossSpeaker/ff_avgmos_3576_138058_000019_000003-6319_64726_000004_000002.wav?raw=true">
+</audio></td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"></td>
-<td style="text-align: left;">Pire qualité</td>
-<td style="text-align: center;"><a
-href="https://drive.google.com/file/d/109oKFEVnM7rt1KDeFIZJZpaHTVeqR_gI/view?usp=sharing"></a></td>
-<td style="text-align: center;"><a
-href="https://drive.google.com/file/d/1hfqPNdFZFeWktGMEoRI8Ji4OMqorsJ3p/view?usp=sharing"></a></td>
-<td style="text-align: center;"><a
-href="https://drive.google.com/file/d/19phsizRBGaklSCPgK6pn6HNzm0SE7nRO/view?usp=sharing"></a></td>
+<td style="text-align: left;">2035</td>
+<td style="text-align: left;">3536</td>
+<td style="text-align: center;">
+<audio controls="" preload="none"><source
+    src="https://github.com/bouliagi/vc_examples/blob/gh-pages/CrossSpeaker/ff_bq_src_2035_152373_000011_000002.wav?raw=true">
+</audio></td>
+<td style="text-align: center;">
+<audio controls="" preload="none"><source
+    src="https://github.com/bouliagi/vc_examples/blob/gh-pages/CrossSpeaker/ff_bq_tgt_3536_8226_000005_000008.wav?raw=true">
+</audio></td>
+<td style="text-align: center;">
+<audio controls="" preload="none"><source
+    src="https://github.com/bouliagi/vc_examples/blob/gh-pages/CrossSpeaker/ff_bq_2035_152373_000011_000002-3536_8226_000005_000008.wav?raw=true">
+</audio></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;"></td>
-<td style="text-align: left;">MOS typique</td>
-<td style="text-align: center;"><a
-href="https://drive.google.com/file/d/1-NRdlt1tJSKBdgv0l37BGTvecZO3tQYp/view?usp=sharing"></a></td>
-<td style="text-align: center;"><a
-href="https://drive.google.com/file/d/17zAuAEYjghqkPQXaZUex9I3g9DF269vI/view?usp=sharing"></a></td>
-<td style="text-align: center;"><a
-href="https://drive.google.com/file/d/1outMkMdtHs7NPcI_CoLT3yDNJoZIo-va/view?usp=sharing"></a></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"></td>
-<td style="text-align: left;">Meilleure qualité</td>
-<td style="text-align: center;"><a
-href="https://drive.google.com/file/d/1-Zac9jz66zPUz4QVjaz94o3iludKYa9J/view?usp=sharing"></a></td>
-<td style="text-align: center;"><a
-href="https://drive.google.com/file/d/1PuiBev7L-bMgdXMUCoMxILheLzhMiuF2/view?usp=sharing"></a></td>
-<td style="text-align: center;"><a
-href="https://drive.google.com/file/d/1OZtpKMdlMxUisKPyItzErF7rTl_2XzuE/view?usp=sharing"></a></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">Femme</td>
-<td style="text-align: left;">Meilleur en tout</td>
-<td style="text-align: center;"><a
-href="https://drive.google.com/file/d/15w1sswvXqx2gD_et2e7yPPNI6DjCClas/view?usp=sharing"></a></td>
-<td style="text-align: center;"><a
-href="https://drive.google.com/file/d/1j7lhZmKyAlUL9Queu8a0w6JsJDvGgJ6J/view?usp=sharing"></a></td>
-<td style="text-align: center;"><a
-href="https://drive.google.com/file/d/11gj0h83y-qkADoR0I2LOX_vbQI_Rl7v1/view?usp=sharing"></a></td>
+<td style="text-align: left;">1919</td>
+<td style="text-align: left;">1988</td>
+<td style="text-align: center;">
+<audio controls="" preload="none"><source
+    src="https://github.com/bouliagi/vc_examples/blob/gh-pages/CrossSpeaker/ff_bo_src_1919_142785_000116_000001.wav?raw=true">
+</audio></td>
+<td style="text-align: center;">
+<audio controls="" preload="none"><source
+    src="https://github.com/bouliagi/vc_examples/blob/gh-pages/CrossSpeaker/ff_bo_tgt_1988_148538_000015_000000.wav?raw=true">
+</audio></td>
+<td style="text-align: center;">
+<audio controls="" preload="none"><source
+    src="https://github.com/bouliagi/vc_examples/blob/gh-pages/CrossSpeaker/ff_bo_1919_142785_000116_000001-1988_148538_000015_000000.wav?raw=true">
+</audio></td>
 </tr>
 </tbody>
 </table>
